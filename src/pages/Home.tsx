@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar"
 import Hero from "../components/Hero";
 import FeaturedProducts from "../components/FeaturedProducts";
-
+import { Footer } from "../components/footer";
 const Home = () => {
     return (
         <>
@@ -10,7 +10,7 @@ const Home = () => {
                 <Hero /> 
                 <FeaturedProducts />
             </main>
-            {/* <Footer /> */}
+            <Footer/>
         </>
     )
 }
