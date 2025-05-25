@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { getFeaturedProducts } from "../data/products";
+import ProductCard from "./ProductCard";
 
 const FeaturedProducts = () => {
     const featuredProducts = getFeaturedProducts();
@@ -13,11 +14,11 @@ const FeaturedProducts = () => {
                     </NavLink>
                 </div>
                 
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {featuredProducts.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))}
-                </div> */}
+                </div>
         </div>
 </section>
     )

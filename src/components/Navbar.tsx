@@ -5,10 +5,11 @@ import {
   RocketLaunch
 } from "phosphor-react";
 import { NavLink } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 
 const Navbar = () => {
-    const totalItems = 0
+    const { totalItems } = useCart();
   return (
     <header className="sticky top-0 z-50  bg-white border-b border-gray-200 shadow-md w-full">
       <div className="container max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-4 flex-wrap">
