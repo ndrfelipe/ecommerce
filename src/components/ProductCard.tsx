@@ -33,6 +33,7 @@ const ProductCard: React.FC<ProductCardProps> = ({product}) => {
           <span className="font-semibold">{formatPrice(product.price)}</span>
           <Button
             size="sm"
+            variant={"secondary"}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
