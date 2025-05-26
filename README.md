@@ -1,6 +1,10 @@
 # RocketShop - Compre com inteligência, viva com mais 🚀
 
 Bem-vindo ao RocketShop, sua plataforma de compras online inteligente!
+<div align="center">
+   <img src="https://github.com/user-attachments/assets/193bf214-559f-4115-be49-bd485246f256" width="500"/>
+</div>
+
 
 ## Funcionalidades 🛍️
 
@@ -30,7 +34,7 @@ Este projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
     * TanStack React Query
 * **Formulários:**
     * React Hook Form
-    * Zod (para validação de esquemas)
+    * Zod
     * @hookform/resolvers
 * **UI Components & Estilização:**
     * Radix UI (Toast, Themes)
@@ -38,8 +42,6 @@ Este projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
     * Phosphor React (Ícones)
     * class-variance-authority
     * tailwind-merge
-* **Linting & Formatação:**
-    * ESLint
 * **Build Tools:**
     * Vite
     * TypeScript
@@ -50,14 +52,14 @@ Este projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
 
 **Pré-requisitos:**
 
-* Node.js (versão LTS recomendada)
-* npm ou yarn
+* Node.js (v22.12.0)
+* npm (v10.8.2)
 
 **Passos:**
 
 1.  Clone este repositório:
     ```bash
-    git clone https://SEU_REPOSITORIO_AQUI.git
+    git clone https://github.com/ndrfelipe/ecommerce.git
     ```
 2.  Navegue até o diretório do projeto:
     ```bash
@@ -66,39 +68,13 @@ Este projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
 3.  Instale as dependências:
     ```bash
     npm install
-    # ou
-    # yarn install
     ```
 4.  Execute o projeto em modo de desenvolvimento:
     ```bash
     npm run dev
-    # ou
-    # yarn dev
     ```
     Abra [http://localhost:5173](http://localhost:5173) (ou a porta indicada no seu terminal) para visualizá-lo no navegador.
 
-### Outros Scripts Disponíveis
-
-* Para construir o projeto para produção:
-    ```bash
-    npm run build
-    # ou
-    # yarn build
-    ```
-* Para executar o linter:
-    ```bash
-    npm run lint
-    # ou
-    # yarn lint
-    ```
-* Para visualizar a build de produção localmente:
-    ```bash
-    npm run preview
-    # ou
-    # yarn preview
-    ```
-
----
 
 ## Autor ✒️
 
@@ -106,4 +82,3 @@ Este projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
 
 ---
 
-**Lembre-se de substituir `https://SEU_REPOSITORIO_AQUI.git` pelo link real do seu repositório Git.**
