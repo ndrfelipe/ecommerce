@@ -2,7 +2,7 @@
 
 Bem-vindo ao RocketShop, sua plataforma de compras online inteligente!
 <div align="center">
-   <img src="https://github.com/user-attachments/assets/193bf214-559f-4115-be49-bd485246f256" width="500"/>
+   <img src="https://github.com/user-attachments/assets/193bf214-559f-4115-be49-bd485246f256" width="1000"/>
 </div>
 
 
