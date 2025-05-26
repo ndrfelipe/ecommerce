@@ -8,9 +8,9 @@ const FeaturedProducts = () => {
         <section className="py-16 px-4">
             <div className="container mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-                <h2 className="text-3xl font-bold">Featured Products</h2>
+                <h2 className="text-3xl font-bold">Seleção Especial</h2>
                     <NavLink to="/products" className="hover:border-b-1 border-gray-700">
-                        <span>View All Products</span>
+                        <span>Ver todos</span>
                     </NavLink>
                 </div>
                 

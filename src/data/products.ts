@@ -3,53 +3,53 @@ export const products: Product[] = [
   {
     id: "1",
     name: "Premium Laptop",
-    description: "High performance laptop with the latest processor and ample storage for all your computing needs.",
+    description: "Desempenho poderoso com o que há de mais moderno em processamento e espaço de sobra para suas tarefas do dia a dia.",
     price: 1299.99,
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    category: "electronics",
+    image: "/notebook.png",
+    category: "Eletrônicos",
     featured: true
   },
   {
     id: "2",
-    name: "Wireless Headphones",
-    description: "Noise cancelling wireless headphones with premium sound quality and long-lasting battery life.",
+    name: "Headset",
+    description: "Mergulhe no som. Cancelamento de ruído, áudio impecável e bateria que acompanha seu ritmo.",
     price: 199.99,
-    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-    category: "electronics"
+    image: "/headset.png",
+    category: "Eletrônicos"
   },
   {
     id: "3",
-    name: "Ergonomic Office Chair",
-    description: "Comfortable ergonomic chair designed for long hours of sitting, with adjustable height and lumbar support.",
+    name: "Cadeira Ergonômica",
+    description: "Conforto e saúde para o seu dia a dia: cadeira ergonômica com ajuste de altura e suporte para a lombar.",
     price: 249.99,
-    image: "https://images.unsplash.com/photo-1721322800607-8c38375eef04",
-    category: "furniture",
+    image: "/chair.png",
+    category: "Mobília",
     featured: true
   },
   {
     id: "4",
-    name: "Coffee Maker",
-    description: "Programmable coffee maker with thermal carafe to keep your coffee hot for hours.",
+    name: "Cafeteira",
+    description: "Programe seu café e aproveite o sabor quente por horas com a jarra térmica eficiente.",
     price: 89.99,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f",
-    category: "appliances"
+    image: "/coffe.png",
+    category: "Eletrodomésticos"
   },
   {
     id: "5",
     name: "Smart Watch",
-    description: "Track your fitness goals and stay connected with this feature-packed smart watch.",
+    description: "Monitore seu desempenho e fique sempre conectado com este smartwatch cheio de recursos incríveis.",
     price: 159.99,
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-    category: "electronics",
+    image: "/smartwatch.png",
+    category: "Eletrônicos",
     featured: true
   },
   {
     id: "6",
-    name: "Wireless Keyboard",
+    name: "Teclado Wireless",
     description: "Compact wireless keyboard with customizable keys and long battery life.",
     price: 59.99,
-    image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
-    category: "electronics"
+    image: "/keyboard.png",
+    category: "Eletrônicos"
   }
 ];
 

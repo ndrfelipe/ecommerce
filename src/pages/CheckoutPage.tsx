@@ -21,17 +21,17 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 
 const formSchema = z.object({
-  firstName: z.string().min(2, "First name is required"),
-  lastName: z.string().min(2, "Last name is required"),
-  email: z.string().email("Invalid email address"),
-  address: z.string().min(5, "Address is required"),
-  city: z.string().min(2, "City is required"),
-  state: z.string().min(2, "State is required"),
-  zipCode: z.string().min(5, "Zip code is required"),
-  cardNumber: z.string().min(16, "Card number is required").max(16),
-  cardName: z.string().min(2, "Name on card is required"),
-  expiry: z.string().min(5, "Expiry date is required"),
-  cvv: z.string().min(3, "CVV is required"),
+  firstName: z.string().min(2, "Nome é obrigatório"),
+  lastName: z.string().min(2, "Sobrenome é obrigatório"),
+  email: z.string().email("Endereço de e-mail inválido"),
+  address: z.string().min(5, "Endereço é obrigatório"),
+  city: z.string().min(2, "Cidade é obrigatória"),
+  state: z.string().min(2, "Estado é obrigatório"),
+  zipCode: z.string().min(5, "CEP é obrigatório"),
+  cardNumber: z.string().min(16, "Número do cartão é obrigatório").max(16),
+  cardName: z.string().min(2, "Nome no cartão é obrigatório"),
+  expiry: z.string().min(5, "Data de validade é obrigatória"), // MM/AA
+  cvv: z.string().min(3, "CVV é obrigatório"),
 });
 
 type CheckoutFormValues = z.infer<typeof formSchema>;
@@ -65,7 +65,7 @@ const CheckoutPage = () => {
       <>
         <Navbar />
         <div className="container mx-auto px-4 py-16 text-center">
-          <h2 className="text-2xl font-bold mb-4">Seu carrinho está vazio. </h2>
+          <h2 className="text-2xl font-bold mb-4">Seu carrinho está vazio.</h2>
           <p className="mb-6">Adicione alguns produtos ao seu carrinho para começar!</p>
           <Button variant="secondary" onClick={() => navigate("/products")}>Procure produtos</Button>
         </div>
@@ -75,16 +75,16 @@ const CheckoutPage = () => {
 
   const onSubmit = (data: CheckoutFormValues) => {
     setIsSubmitting(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
       setIsCompleted(true);
       clearCart();
-      
+
       toast({
-        title: "Order placed successfully!",
-        description: "Thank you for your purchase.",
+        title: "Pedido realizado com sucesso!",
+        description: "Obrigado pela sua compra.",
       });
     }, 1500);
   };
@@ -94,14 +94,14 @@ const CheckoutPage = () => {
       <>
         <Navbar />
         <div className="container mx-auto px-4 py-16 max-w-2xl">
-          <div className="text-center bg-white rounded-lg p-8 border shadow-sm">
+          <div className="text-center bg-white rounded-lg p-8 border border-indigo-200 shadow-sm">
             <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
               <CheckCircle className="text-green-600 h-8 w-8" />
             </div>
-            <h2 className="text-2xl font-bold mb-2">Order Confirmed!</h2>
-            <p className="text-muted-foreground mb-8">Your order has been placed successfully</p>
-            <p className="mb-8">We've sent a confirmation email with details to your email address.</p>
-            <Button onClick={() => navigate("/")}>Continue Shopping</Button>
+            <h2 className="text-2xl font-bold mb-2">Pedido Confirmado!</h2>
+            <p className="text-muted-foreground mb-8">Seu pedido foi realizado com sucesso.</p>
+            <p className="mb-8">Enviamos um e-mail de confirmação com os detalhes para o seu endereço de e-mail.</p>
+            <Button variant="secondary" onClick={() => navigate("/")}>Continuar Comprando</Button>
           </div>
         </div>
       </>
@@ -112,23 +112,23 @@ const CheckoutPage = () => {
     <>
       <Navbar />
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-8">Checkout</h1>
-        
+        <h1 className="text-3xl font-bold mb-8">Finalizar Compra</h1>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="md:col-span-2">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                <div className="bg-white rounded-lg p-6 border shadow-sm">
-                  <h2 className="text-xl font-semibold mb-4">Shipping Information</h2>
+                <div className="bg-white rounded-lg p-6 border border-indigo-200 shadow-sm">
+                  <h2 className="text-xl font-semibold mb-4">Informações de Entrega</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
                       name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>First Name</FormLabel>
+                          <FormLabel>Nome</FormLabel>
                           <FormControl>
-                            <Input placeholder="John" {...field} />
+                            <Input placeholder="João" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -139,9 +139,9 @@ const CheckoutPage = () => {
                       name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Last Name</FormLabel>
+                          <FormLabel>Sobrenome</FormLabel>
                           <FormControl>
-                            <Input placeholder="Doe" {...field} />
+                            <Input placeholder="Silva" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -154,7 +154,7 @@ const CheckoutPage = () => {
                         <FormItem className="md:col-span-2">
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="john.doe@example.com" {...field} />
+                            <Input placeholder="joao.silva@example.com" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -165,9 +165,9 @@ const CheckoutPage = () => {
                       name="address"
                       render={({ field }) => (
                         <FormItem className="md:col-span-2">
-                          <FormLabel>Address</FormLabel>
+                          <FormLabel>Endereço</FormLabel>
                           <FormControl>
-                            <Input placeholder="123 Main St" {...field} />
+                            <Input placeholder="Rua Principal, 123" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -178,23 +178,23 @@ const CheckoutPage = () => {
                       name="city"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>City</FormLabel>
+                          <FormLabel>Cidade</FormLabel>
                           <FormControl>
-                            <Input placeholder="San Francisco" {...field} />
+                            <Input placeholder="São Paulo" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> {/* Mantido o grid interno para State e Zip Code */}
                       <FormField
                         control={form.control}
                         name="state"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>State</FormLabel>
+                            <FormLabel>Estado</FormLabel>
                             <FormControl>
-                              <Input placeholder="CA" {...field} />
+                              <Input placeholder="SP" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -205,9 +205,9 @@ const CheckoutPage = () => {
                         name="zipCode"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>ZIP Code</FormLabel>
+                            <FormLabel>CEP</FormLabel>
                             <FormControl>
-                              <Input placeholder="94103" {...field} />
+                              <Input placeholder="01000-000" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -216,16 +216,16 @@ const CheckoutPage = () => {
                     </div>
                   </div>
                 </div>
-                
-                <div className="bg-white rounded-lg p-6 border shadow-sm">
-                  <h2 className="text-xl font-semibold mb-4">Payment Details</h2>
+
+                <div className="bg-white rounded-lg p-6 border border-indigo-200 shadow-sm">
+                  <h2 className="text-xl font-semibold mb-4">Detalhes do Pagamento</h2>
                   <div className="grid grid-cols-1 gap-4">
                     <FormField
                       control={form.control}
                       name="cardNumber"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Card Number</FormLabel>
+                          <FormLabel>Número do Cartão</FormLabel>
                           <FormControl>
                             <Input placeholder="1234 5678 9012 3456" {...field} />
                           </FormControl>
@@ -238,23 +238,23 @@ const CheckoutPage = () => {
                       name="cardName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name on Card</FormLabel>
+                          <FormLabel>Nome no Cartão</FormLabel>
                           <FormControl>
-                            <Input placeholder="John Doe" {...field} />
+                            <Input placeholder="João M Silva" {...field} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> {/* Mantido o grid interno para Expiry e CVV */}
                       <FormField
                         control={form.control}
                         name="expiry"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Expiry Date</FormLabel>
+                            <FormLabel>Data de Validade</FormLabel>
                             <FormControl>
-                              <Input placeholder="MM/YY" {...field} />
+                              <Input placeholder="MM/AA" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -276,18 +276,18 @@ const CheckoutPage = () => {
                     </div>
                   </div>
                 </div>
-                
-                <Button type="submit" className="w-full" disabled={isSubmitting}>
-                  {isSubmitting ? "Processing..." : "Place Order"}
+
+                <Button variant="secondary" type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? "Processando..." : "Finalizar Pedido"}
                 </Button>
               </form>
             </Form>
           </div>
-          
+
           <div className="md:col-span-1">
-            <div className="bg-white rounded-lg p-6 border shadow-sm sticky top-20">
-              <h2 className="text-xl font-semibold mb-4">Order Summary</h2>
-              
+            <div className="bg-white rounded-lg p-6 border border-indigo-200 shadow-sm sticky top-20">
+              <h2 className="text-xl font-semibold mb-4">Resumo do Pedido</h2>
+
               <div className="space-y-4 max-h-80 overflow-auto mb-4">
                 {items.map((item) => (
                   <div key={item.product.id} className="flex justify-between">
@@ -300,22 +300,22 @@ const CheckoutPage = () => {
                   </div>
                 ))}
               </div>
-              
+
               <Separator className="my-4" />
-              
+
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <p>Subtotal</p>
                   <p>{formatPrice(subtotal)}</p>
                 </div>
                 <div className="flex justify-between">
-                  <p>Shipping</p>
-                  <p>Free</p>
+                  <p>Frete</p>
+                  <p>Grátis</p> {/* ou calcular o frete */}
                 </div>
                 <Separator className="my-2" />
                 <div className="flex justify-between font-semibold">
                   <p>Total</p>
-                  <p>{formatPrice(subtotal)}</p>
+                  <p>{formatPrice(subtotal)}</p> {/* Ajustar se houver frete */}
                 </div>
               </div>
             </div>

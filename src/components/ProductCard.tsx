@@ -11,7 +11,7 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({product}) => {
     const { addToCart } = useCart();
-
+    
     return (
     <div className="group rounded-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-md animate-fade-in">
       <NavLink to={`/products/${product.id}`} className="block">
@@ -33,7 +33,7 @@ const ProductCard: React.FC<ProductCardProps> = ({product}) => {
           <span className="font-semibold">{formatPrice(product.price)}</span>
           <Button
             size="sm"
-            variant={"secondary"}
+            variant="secondary"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -41,7 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({product}) => {
             }}
           >
             <ShoppingCart className="h-4 w-4 mr-2" />
-            Add to cart
+            Adicionar
           </Button>
         </div>
       </div>
