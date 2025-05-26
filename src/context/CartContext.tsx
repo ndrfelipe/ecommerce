@@ -26,7 +26,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({children}
 
     // Calculate derived values
     const totalItems = items.reduce((total, item) => total + item.quantity, 0);
-    const subtotal =  items.reduce((total, item) => total + (item.product.price), 0);
+    const subtotal = items.reduce((total, item) => total + (item.product.price * item.quantity), 0);
 
     // Load cart from localStorage on initial render
      useEffect(() => {

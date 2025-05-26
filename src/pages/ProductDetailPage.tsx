@@ -78,7 +78,7 @@ const ProductDetailPage = () => {
             
             <div className="mb-8">
               <label className="block text-sm font-medium mb-2">Quantity</label>
-              <div className="flex items-center border rounded-md w-fit">
+              <div className="flex items-center border border-indigo-200 rounded-md w-fit">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -102,6 +102,7 @@ const ProductDetailPage = () => {
             
             <div className="flex gap-4">
               <Button 
+                variant={"secondary"}
                 size="lg" 
                 onClick={handleAddToCart}
                 className="flex-1"

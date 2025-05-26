@@ -11,10 +11,10 @@ const CartSummary: React.FC = () => {
   if (items.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-[70vh] text-center">
-        <h3 className="text-lg font-medium mb-2">Your cart is empty</h3>
-        <p className="text-muted-foreground mb-6">Add some products to your cart to get started!</p>
+        <h3 className="text-lg font-medium mb-2">Seu carrinho está vazio. </h3>
+        <p className="text-muted-foreground mb-6">Adicione alguns produtos ao seu carrinho para começar!</p>
         <Link to="/products">
-          <Button>Browse Products</Button>
+          <Button variant="secondary">Procure produtos</Button>
         </Link>
       </div>
     );
@@ -43,7 +43,7 @@ const CartSummary: React.FC = () => {
               </p>
               
               <div className="flex items-center justify-between mt-4">
-                <div className="flex items-center border rounded-md">
+                <div className="flex items-center border border-indigo-200 rounded-md">
                   <Button
                     variant="ghost"
                     size="icon"
@@ -85,14 +85,14 @@ const CartSummary: React.FC = () => {
         
         <div className="flex flex-col gap-2">
           <Link to="/checkout">
-            <Button className="w-full">Checkout</Button>
+            <Button variant="secondary" className="w-full">Checkout</Button>
           </Link>
           <Button
             variant="outline"
             onClick={clearCart}
             className="w-full"
           >
-            Clear cart
+            Limpar carrinho
           </Button>
         </div>
       </div>

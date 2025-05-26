@@ -5,6 +5,9 @@ import { CartProvider } from './context/CartContext'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import ProductDetailPage from "./pages/ProductDetailPage";
+import ProductsPage from "./pages/ProductsPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 function App() {
@@ -17,9 +20,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/products/:id" element={<ProductDetailPage />} />
-                {/* <Route path="/products" element={<ProductsPage />} />
-                <Route path="/checkout" element={<CheckoutPage />} />
-                <Route path="*" element={<NotFound />} /> */}
+              <Route path="/products" element={<ProductsPage />} />
+              <Route path="/checkout" element={<CheckoutPage />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
         </CartProvider>

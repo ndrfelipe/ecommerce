@@ -1,12 +1,21 @@
 import {
-  UserCircle,
-  Heart,
-  ShoppingCartSimple,
   RocketLaunch
 } from "phosphor-react";
+
+import { 
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "./ui/sheet";
+
 import { NavLink } from "react-router-dom";
 import { useCart } from "../context/CartContext";
-
+import { ShoppingCart } from "lucide-react";
+import { Button } from "./ui/button";
+import CartSummary from "./CartSummary";
 
 const Navbar = () => {
     const { totalItems } = useCart();
@@ -31,32 +40,31 @@ const Navbar = () => {
         </nav>
 
         {/* AÇÕES */}
-        <div className="flex items-center gap-4 mt-2 sm:mt-0">
-          <NavLink to="/" className="flex items-center gap-1 text-gray-600 hover:text-primary">
-            <UserCircle size={24} />
-            <p className="text-sm hidden sm:block">Entre ou cadastre-se</p>
-          </NavLink>
-          <NavLink to="/" className="text-gray-600 hover:text-primary">
-            <Heart size={24} />
-          </NavLink>
 
-          <div className="cursor-pointer p-3 m-1 bg-white shadow-lg rounded-lg hover:bg-blue-100">
-            <div className="relative">
-                <NavLink to="/" className="text-gray-600 hover:text-primary">
-                <ShoppingCartSimple size={24} />
-                </NavLink>
-
-                {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-orange-400 text-white text-xs font-semibold rounded-full h-4 w-4 -m-1 flex items-center justify-center">
-                    {totalItems}
-                </span>
-                )}
-            </div>
+          <div className="flex items-center space-x-4">
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button variant="outline" size="icon" className="relative">
+                    <ShoppingCart className="h-5 w-5" />
+                    {totalItems > 0 && (
+                      <span className="absolute -top-2 -right-2 bg-orange-400 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                        {totalItems}
+                      </span>
+                    )}
+                  </Button>
+                </SheetTrigger>
+                <SheetContent>
+                  <SheetHeader>
+                    <SheetTitle>Your Cart</SheetTitle>
+                    <SheetDescription>
+                      Review your items before checkout
+                    </SheetDescription>
+                  </SheetHeader>
+                  <CartSummary />
+                </SheetContent>
+              </Sheet>
+          </div>
         </div>
-
-          
-        </div>
-      </div>
     </header>
   );
 }
