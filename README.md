@@ -59,7 +59,7 @@ Este projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
 
 1.  Clone este repositório:
     ```bash
-    git clone https://github.com/ndrfelipe/ecommerce.git
+    git clone https://github.com/ndrfelipe/rocketshop.git
     ```
 2.  Navegue até o diretório do projeto:
     ```bash
