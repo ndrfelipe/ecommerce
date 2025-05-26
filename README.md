@@ -1,4 +1,4 @@
-# RocketShop - Compre com inteligência, viva com mais 🚀
+# RocketShop - Compre com inteligência, viva com mais 
 
 Bem-vindo ao RocketShop, sua plataforma de compras online inteligente!
 <div align="center">
@@ -6,7 +6,7 @@ Bem-vindo ao RocketShop, sua plataforma de compras online inteligente!
 </div>
 
 
-## Funcionalidades 🛍️
+## Funcionalidades 🛍
 
 O RocketShop foi desenvolvido para proporcionar uma experiência de compra simples e eficiente. Com ele, você pode:
 
@@ -19,7 +19,7 @@ O RocketShop foi desenvolvido para proporcionar uma experiência de compra simpl
 
 ---
 
-## Tecnologias Utilizadas 🛠️
+## Tecnologias utilizadas 
 
 Este projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
 
@@ -48,7 +48,7 @@ Este projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
 
 ---
 
-## Como Executar o Projeto Localmente 👨‍💻
+## Como executar o projeto localmente
 
 **Pré-requisitos:**
 
@@ -76,7 +76,7 @@ Este projeto foi construído utilizando as seguintes tecnologias e bibliotecas:
     Abra [http://localhost:5173](http://localhost:5173) (ou a porta indicada no seu terminal) para visualizá-lo no navegador.
 
 
-## Autor ✒️
+## Autor 
 
 * **André Braga**
 
